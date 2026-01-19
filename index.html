@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio | Creative Works 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-email {
+            font-size: 1em;
+            color: #444;
+            margin-bottom: 18px;
+        }
+
+        .contact-email a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            background: rgba(102,126,234,0.08);
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+
+        .contact-email a:hover {
+            text-decoration: underline;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-header {
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .project-number {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .project-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .project-type {
+            font-size: 0.9em;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-context {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .skills {
+            margin: 15px 0;
+        }
+
+        .skills-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        .view-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .view-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .skills-summary {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .skills-summary h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Design Portfolio</h1>
+            <p class="subtitle">Creative Works & Design Projects</p>
+            <div class="intro">
+                Hi, I am Lakshmi Manjunath, a Computer Science engineering student with a strong interest in design, creativity, and visual storytelling. Alongside my technical background, I actively work on graphic design and UI design projects for academic events, student organizations, and creative initiatives. I enjoy transforming ideas into visually engaging designs that communicate clearly, maintain brand consistency, and enhance user experience. My work spans posters, certificates, logos, presentations, comic-style visuals, and web interface designs, created using Canva and Figma.<br><b>Let's Connects!.</b> 
+                <p class="contact-email"><a href="mailto:lakshmi.manjunath006@gmail.com">lakshmi.manjunath006@gmail.com</a></p>
+            </div>
+        </header>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 01</div>
+                    <div class="project-title">Gemini CLI Certificates</div>
+                    <div class="project-type">Certificate Design</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Official certificates created for a Gemini CLI college event as part of Google Student Ambassador (GSA) responsibilities.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Certificate Design</span>
+                            <span class="skill-tag">Branding</span>
+                            <span class="skill-tag">Event Graphics</span>
+                        </div>
+                    </div>
+                    <a href="https://www.canva.com/design/DAG7LD9snrA/qyfRjYBD2esWs0OVoQEVOA/edit" class="view-btn" target="_blank">View Design</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 02</div>
+                    <div class="project-title">Udgham College Club Logo</div>
+                    <div class="project-type">Logo Design</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Logo design created as a competition entry for Udgham, a college club, demonstrating brand identity expertise.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Brand Identity</span>
+                            <span class="skill-tag">Logo Design</span>
+                            <span class="skill-tag">Visual Identity</span>
+                        </div>
+                    </div>
+                    <a href="https://www.canva.com/design/DAGkPU0jG1g/EdRkrUPB3j4r_8l88e-2Mw/edit" class="view-btn" target="_blank">View Design</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 03</div>
+                    <div class="project-title">Comic-Style Creative Presentation</div>
+                    <div class="project-type">Creative Storytelling</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Submission for the "Show Your Creativity" round during Google Student Ambassador selection, featuring a personal story in comic style.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Visual Storytelling</span>
+                            <span class="skill-tag">Comic Layout</span>
+                            <span class="skill-tag">Narrative Design</span>
+                        </div>
+                    </div>
+                    <a href="https://www.canva.com/design/DAGzzfsel_A/hOtCtDraxP83KCSw6sAWZQ/edit" class="view-btn" target="_blank">View Design</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 04</div>
+                    <div class="project-title">Flowchart Components</div>
+                    <div class="project-type">Infographic Design</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Custom-designed flowchart components created for a competition presentation, showcasing information design skills.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Information Design</span>
+                            <span class="skill-tag">Visual Hierarchy</span>
+                            <span class="skill-tag">Technical Illustration</span>
+                        </div>
+                    </div>
+                    <a href="https://www.canva.com/design/DAG6XYS9ts/gjGxjQzPuI3b3noANgyr1w/edit" class="view-btn" target="_blank">View Design</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 05</div>
+                    <div class="project-title">Freshers Party Poster</div>
+                    <div class="project-type">Event Poster Design</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Promotional poster designed for the Computer Science Department Freshers Party at ATMECE.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Event Marketing</span>
+                            <span class="skill-tag">Poster Design</span>
+                            <span class="skill-tag">Typography</span>
+                        </div>
+                    </div>
+                    <a href="https://www.canva.com/design/DAG6vDXPx5o/wkLWWw6TA7ldZHB9t_K9_g/edit" class="view-btn" target="_blank">View Design</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 06</div>
+                    <div class="project-title">Gemini Event Poster</div>
+                    <div class="project-type">Event Poster Design</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Official poster designed and circulated for a Gemini event, demonstrating event promotion expertise.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Event Promotion</span>
+                            <span class="skill-tag">Digital Marketing</span>
+                            <span class="skill-tag">Brand Alignment</span>
+                        </div>
+                    </div>
+                    <a href="https://www.canva.com/design/DAG6vDXPx5o/wkLWWw6TA7ldZHB9t_K9_g/edit" class="view-btn" target="_blank">View Design</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 07</div>
+                    <div class="project-title">T-Shirt Print Design</div>
+                    <div class="project-type">Apparel Design</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Creative exploration in merchandise design created during free time, showcasing versatility in design mediums.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Print Design</span>
+                            <span class="skill-tag">Apparel Graphics</span>
+                            <span class="skill-tag">Creative Experimentation</span>
+                        </div>
+                    </div>
+                    <a href="https://www.canva.com/design/DAGkmHs6m7c/A0aZEIrz3MYJ7LKHPRFHqg/edit" class="view-btn" target="_blank">View Design</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 08</div>
+                    <div class="project-title">Book Cover Design</div>
+                    <div class="project-type">Editorial Design</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Challenging book design project that pushed creative boundaries, showcasing editorial design capabilities.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Editorial Design</span>
+                            <span class="skill-tag">Cover Composition</span>
+                            <span class="skill-tag">Conceptual Thinking</span>
+                        </div>
+                    </div>
+                    <a href="https://www.canva.com/design/DAGuXcv1KX8/_pM80_WOD6GnmbeOrMravA/edit" class="view-btn" target="_blank">View Design</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-number">Project 09</div>
+                    <div class="project-title">VidhiPath.ai Web Design</div>
+                    <div class="project-type">Web Design / UI Design</div>
+                </div>
+                <div class="project-body">
+                    <p class="project-context">Comprehensive web design project for VidhiPath.ai, showcasing complete interface design and UX principles.</p>
+                    <div class="skills">
+                        <div class="skills-label">Skills:</div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Web Design</span>
+                            <span class="skill-tag">UI/UX Principles</span>
+                            <span class="skill-tag">Digital Product Design</span>
+                        </div>
+                    </div>
+                    <a href="https://www.pdffiller.com/s/qLrbk0hl7" class="view-btn" target="_blank">View Documentation</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-summary">
+            <h2>Skills Summary</h2>
+            <p style="margin-bottom: 20px; color: #666;">This portfolio demonstrates proficiency across multiple design disciplines:</p>
+            <div class="skills-list">
+                <div class="skill-item">Certificate & Credential Design</div>
+                <div class="skill-item">Brand Identity & Logo Creation</div>
+                <div class="skill-item">Event Marketing Materials</div>
+                <div class="skill-item">Visual Storytelling & Comics</div>
+                <div class="skill-item">Infographics & Flowcharts</div>
+                <div class="skill-item">Apparel & Merchandise Design</div>
+                <div class="skill-item">Editorial & Publication Design</div>
+                <div class="skill-item">Web & Digital Interface Design</div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Total Projects:</strong> 9 designs across multiple categories</p>
+            <p><strong>Design Tools:</strong> Canva & Figma</p>
+        </footer>
+    </div>
+</body>
+</html>
